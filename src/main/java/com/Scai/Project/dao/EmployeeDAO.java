@@ -120,11 +120,11 @@ public class EmployeeDAO implements IDAO{
                 params.put("username", rs.getString("m.username"));
                 params.put("password", rs.getString("m.password"));
                 params.put("idEmployee", rs.getString("e.id"));
-                params.put("working_role", rs.getString("m.working_role"));
+                params.put("working_role", rs.getString("working_role"));
 
                 Employee employee = context.getBean(Employee.class, params);
 
-                ris.put(null, employee);
+                ris.put(rs.getInt("m.id"), employee);
             }
             
         } catch (SQLException e) {

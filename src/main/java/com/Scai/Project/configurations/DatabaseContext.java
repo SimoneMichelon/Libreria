@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import com.Scai.Project.dao.AuthorDAO;
 import com.Scai.Project.dao.BookDAO;
 import com.Scai.Project.dao.Database;
+import com.Scai.Project.dao.EmployeeDAO;
 
 @Configuration
 public class DatabaseContext {
@@ -23,6 +24,11 @@ public class DatabaseContext {
     @Bean
     public AuthorDAO newAuthorDAO(){
         return new AuthorDAO();
+    }
+
+    @Bean
+    public EmployeeDAO newEmployeeDAO(){
+        return new EmployeeDAO();
     }
 
 

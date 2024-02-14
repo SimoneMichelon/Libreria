@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Scope;
 
 import com.Scai.Project.entities.Author;
 import com.Scai.Project.entities.Book;
+import com.Scai.Project.entities.Employee;
 
 @Configuration
 public class EntitiesContext {
@@ -38,6 +39,20 @@ public class EntitiesContext {
             Integer.parseInt(params.get("num_pages")),
             Double.parseDouble(params.get("price")), 
             a
+        );
+    }
+
+    @Bean
+    @Scope("prototype")
+    public Employee newEmployee(Map<String,String> params){
+        return new Employee(
+            Integer.parseInt(params.get("idEmployee")),
+            params.get("name"),
+            params.get("surname"),
+            Date.valueOf(params.get("dob")),
+            params.get("working_role"),
+            params.get("username"),
+            params.get("password")
         );
     }
 
