@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/listAuthor.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+
+        <title>List of Author</title>
+    </head>
+    <body>
+        <h1>List of Author</h1>
+
+        <a href="/home">HOME</a> 
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Date of Birthday</th>
+                <th>Biography</th>
+            </tr>
+            <tr th:each="author : ${authors}">
+                <td th:text="${author.name}"></td>
+                <td th:text="${author.surname}"></td>
+                <td th:text="${author.dob}"></td>
+                <td th:text="${author.biography}"></td>
+            </tr>
+
+        </table>
+        
+    </body>
+</html>
