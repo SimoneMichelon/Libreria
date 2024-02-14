@@ -105,7 +105,6 @@ public class BookDAO implements IDAO{
                 paramsAuthor.put("biography", rs.getString("a.biography"));
 
                 Author a = context.getBean(Author.class, paramsAuthor);
-
                 Book b = context.getBean(Book.class, paramsBook, a);
 
                 ris.put(rs.getInt("b.id"), b);
@@ -122,7 +121,6 @@ public class BookDAO implements IDAO{
                 System.out.println("Errore nella chiusura del PS e RS | BookDAO | read " + e.getMessage());
             }
         }
-
         return ris;
     }
 

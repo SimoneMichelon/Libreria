@@ -183,9 +183,7 @@ VALUES
     ('Archivist', 15);
     
 
-
-
-
+select * from models m inner join employees e on e.idModel = m.id;
 
 
 
