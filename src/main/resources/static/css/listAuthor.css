@@ -1,89 +1,53 @@
 /* Reset CSS */
-* {
+body, h1, a, table {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Typography */
-/* Typography */
-body {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
+    color: #fff;
 }
 
+body {
+    background-color: #1a1a1a; /* Colore di sfondo scuro */
+    padding: 20px;
+}
 
 h1 {
-    font-size: 36px;
+    font-size: 2em;
     margin-bottom: 20px;
-    margin-top: 30px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #333;
+    color: #34d399; /* Colore del titolo in verde */
 }
 
-/* Navigation */
 a {
-    display: block;
-    width: fit-content;
-    text-align: left;
-    padding: 10px;
-    margin-left: 100px;
-    margin-bottom: 20px;
+    display: inline-block;
+    color: #34d399; /* Colore del link in verde */
     text-decoration: none;
-    color: #fff;
-    background-color: #007bff;
-    border: 1px solid #fff;
+    padding: 10px;
+    margin-bottom: 20px;
     border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #222; /* Colore di sfondo dei link */
+    transition: background-color 0.3s ease;
 }
 
 a:hover {
-    background-color: #f9f9f9;
-    color: #007bff;
-    border: 1px solid #007bff;
+    background-color: #333; /* Cambio colore al passaggio del mouse */
 }
 
-/* Table Styles */
 table {
-    width: 90%;
+    width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    
-    margin: auto;
 }
 
 th, td {
-    padding: 15px;
+    border: 1px solid #333; /* Colore del bordo della tabella */
+    padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background-color: #007bff;
-    color: #fff;
-    text-transform: uppercase;
 }
 
 tr:nth-child(even) {
-    background-color: #f5f5f5;
+    background-color: #292929; /* Colore di sfondo delle righe pari */
 }
 
-tr:hover {
-    background-color: #e9ecef;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    table {
-        font-size: 14px;
-    }
+th {
+    background-color: #34d399; /* Colore di sfondo dell'intestazione */
+    color: #fff; /* Colore del testo dell'intestazione */
 }
