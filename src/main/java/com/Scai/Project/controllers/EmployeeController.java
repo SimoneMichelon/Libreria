@@ -19,8 +19,8 @@ public class EmployeeController {
 
     @GetMapping("/listEmployees")
     public String getMethodName(Model model) {
-        List<Employee> employee = employeeService.findAll();
-        model.addAttribute("employees", employee);
+        List<Employee> employeeList = employeeService.findAll();
+        model.addAttribute("employees", employeeList);
         return "listEmployees.html";
     }
     

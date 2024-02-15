@@ -1,0 +1,53 @@
+/* Reset CSS */
+body, h1, a, table {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+
+body {
+    background-color: #1a1a1a; /* Colore di sfondo scuro */
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2ecc71; /* Colore del titolo in verde */
+}
+
+a {
+    display: inline-block;
+    color: #2ecc71; /* Colore del link in verde */
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #222; /* Colore di sfondo dei link */
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #333; /* Cambio colore al passaggio del mouse */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #333; /* Colore del bordo della tabella */
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #292929; /* Colore di sfondo delle righe pari */
+}
+
+th {
+    background-color: #2ecc71; /* Colore di sfondo dell'intestazione */
+    color: #fff; /* Colore del testo dell'intestazione */
+}
