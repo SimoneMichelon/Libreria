@@ -185,6 +185,8 @@ VALUES
 
 select * from models m inner join employees e on e.idModel = m.id;
 
+select * from Models m inner join Customers c ON m.id = c.idModel;
+select c.id from models m inner join customers c on m.id = c.idModel where m.id = 3;
 
 
 

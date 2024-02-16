@@ -32,7 +32,7 @@ public class EntitiesContext {
     @Bean 
     @Scope("prototype")
     public Book newBook(Map<String,String> params, Author a){
-        return new Book(
+        return new Book( 
             Integer.parseInt(params.get("id")),
             params.get("title"),
             params.get("type"),
