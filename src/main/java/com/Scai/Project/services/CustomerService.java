@@ -32,8 +32,38 @@ public class CustomerService {
         for (Entity customer : data.values()) {
             ris.add((Customer) customer);
         }
-
         return ris;
+    }
+
+    public Customer findById(int id){
+        Map<Integer,Entity> data = customerDAO.read();
+        return (Customer)data.get(id);
+    }
+
+    public List<Customer> findByFullName(String fullname){
+        Map<Integer,Entity> data = customerDAO.read();
+        List<Customer> ris = new ArrayList<>();
+
+        for (Entity customer : data.values()) {
+            if((((Customer)customer).getName() + " " + ((Customer)customer).getSurname()).equalsIgnoreCase(fullname)){
+                ris.add((Customer)customer);
+            }
+        }
+        return ris;
+    }
+
+    public void updateCustomer(Map<String,String> params){
+        Customer customer = context.getBean(Customer.class,params);
+        customerDAO.update(customer);;
+    }
+    
+    public void insertCustomer(Map<String,String> params){
+        Customer customer = context.getBean(Customer.class,params);
+        customerDAO.create(customer);
+    }
+
+    public void deleteCustomer(int id){
+        customerDAO.delete(id);
     }
     
 }

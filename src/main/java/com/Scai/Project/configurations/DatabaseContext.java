@@ -8,6 +8,7 @@ import com.Scai.Project.dao.BookDAO;
 import com.Scai.Project.dao.CustomerDAO;
 import com.Scai.Project.dao.Database;
 import com.Scai.Project.dao.EmployeeDAO;
+import com.Scai.Project.dao.UserDAO;
 
 @Configuration
 public class DatabaseContext {
@@ -37,8 +38,8 @@ public class DatabaseContext {
         return new CustomerDAO();
     }
 
-
-
-
-    
+    @Bean
+    public UserDAO newUserDAO(){
+        return new UserDAO();
+    }
 }

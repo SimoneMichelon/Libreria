@@ -196,4 +196,46 @@ public class EmployeeDAO implements IDAO{
             }
         }
     }
+
+    public Employee readFromId(int id){
+        String query = "select * from Models m inner join employees e on m.id = e.idModel where m.id = ?;";
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Employee employee = null;
+
+        try {
+            ps = database.getConnection().prepareStatement(query);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Map<String,String> params = new HashMap<>();
+                params.put("idModel", rs.getInt("m.id")+"");
+                params.put("name", rs.getString("m.name"));
+                params.put("surname", rs.getString("m.surname"));
+                params.put("dob", rs.getDate("m.dob").toString());
+                params.put("username", rs.getString("m.username"));
+                params.put("password", rs.getString("m.password"));
+                params.put("idEmployee", rs.getInt("e.id")+"");
+                params.put("working_role", rs.getString("working_role"));
+
+                employee = context.getBean(Employee.class, params);
+            }
+            
+        } catch (SQLException exc) {
+            System.out.println("Errore nella selectFromId in EmployeeDAO " + exc.getMessage());
+        }
+        finally{
+            try {
+                ps.close();
+                rs.close();
+            } catch (Exception es) {
+                System.out.println("Errore nella chiusura del PS e RS " + es.getMessage());
+            }
+        }
+
+        return employee;
+    }
+
 }

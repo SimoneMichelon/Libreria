@@ -7,6 +7,7 @@ import com.Scai.Project.services.AuthorService;
 import com.Scai.Project.services.BookService;
 import com.Scai.Project.services.CustomerService;
 import com.Scai.Project.services.EmployeeService;
+import com.Scai.Project.services.LoginService;
 
 @Configuration
 public class ServiceContext {
@@ -29,5 +30,10 @@ public class ServiceContext {
     @Bean
     public CustomerService newCustomerService(){
         return new CustomerService();
+    }
+
+    @Bean
+    public LoginService newLoginService(){
+        return new LoginService();
     }
 }

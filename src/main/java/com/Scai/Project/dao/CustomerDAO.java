@@ -209,4 +209,46 @@ public class CustomerDAO implements IDAO{
         
     }
 
+        public Customer readFromId(int id){
+        String query = "select * from Models m inner join customers c on m.id = c.idModel where m.id = ?;";
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Customer customer = null;
+
+        try {
+            ps = database.getConnection().prepareStatement(query);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Map<String,String> params = new HashMap<>();
+                params.put("idModel", rs.getInt("m.id")+"");
+                params.put("name", rs.getString("m.name"));
+                params.put("surname", rs.getString("m.surname"));
+                params.put("dob", rs.getDate("m.dob").toString());
+                params.put("username", rs.getString("m.username"));
+                params.put("password", rs.getString("m.password"));
+                params.put("idCustomer", rs.getInt("c.id")+"");
+
+                customer = context.getBean(Customer.class, params);
+            }
+
+
+            return customer;
+            
+        } catch (SQLException exc) {
+            System.out.println("Errore nella selectFromId in CustomerDAO " + exc.getMessage());
+        }
+        finally{
+            try {
+                ps.close();
+                rs.close();
+            } catch (Exception es) {
+                System.out.println("Errore nella chiusura del PS e RS " + es.getMessage());
+            }
+        }
+        return customer;
+    }
+
 }

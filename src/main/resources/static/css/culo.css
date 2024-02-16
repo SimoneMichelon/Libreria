@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #ff0000; /* Rosso */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    padding: 50px 20px;
+    font-size: 36px;
+    font-weight: bold;
+    background-color: #000; /* Nero */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+}
