@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.Scai.Project.services.AuthorService;
 import com.Scai.Project.services.BookService;
+import com.Scai.Project.services.CustomerService;
 import com.Scai.Project.services.EmployeeService;
 
 @Configuration
@@ -23,5 +24,10 @@ public class ServiceContext {
     @Bean
     public EmployeeService newEmployeeService(){
         return new EmployeeService();
+    }
+
+    @Bean
+    public CustomerService newCustomerService(){
+        return new CustomerService();
     }
 }

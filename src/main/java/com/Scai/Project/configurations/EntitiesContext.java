@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Scope;
 
 import com.Scai.Project.entities.Author;
 import com.Scai.Project.entities.Book;
+import com.Scai.Project.entities.Customer;
 import com.Scai.Project.entities.Employee;
 
 @Configuration
@@ -51,6 +52,19 @@ public class EntitiesContext {
             params.get("surname"),
             Date.valueOf(params.get("dob")),
             params.get("working_role"),
+            params.get("username"),
+            params.get("password")
+        );
+    }
+
+    @Bean
+    @Scope("prototype")
+    public Customer newCustomer(Map<String,String> params){
+        return new Customer(
+            Integer.parseInt(params.get("idCustomer")),
+            params.get("name"),
+            params.get("surname"),
+            Date.valueOf(params.get("dob")),
             params.get("username"),
             params.get("password")
         );

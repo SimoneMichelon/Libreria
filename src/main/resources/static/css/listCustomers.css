@@ -14,12 +14,12 @@ body {
 h1 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #e63946; /* Colore del titolo in rosso (meno acceso) */
+    color: #2ecc71; /* Colore del titolo in verde */
 }
 
 a {
     display: inline-block;
-    color: #e63946; /* Colore del link in rosso (meno acceso) */
+    color: #2ecc71; /* Colore del link in verde */
     text-decoration: none;
     padding: 10px;
     margin-bottom: 20px;
@@ -48,6 +48,6 @@ tr:nth-child(even) {
 }
 
 th {
-    background-color: #e63946; /* Colore di sfondo dell'intestazione */
+    background-color: #2ecc71; /* Colore di sfondo dell'intestazione */
     color: #fff; /* Colore del testo dell'intestazione */
 }
