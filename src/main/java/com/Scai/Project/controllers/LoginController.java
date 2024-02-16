@@ -17,7 +17,5 @@ public class LoginController {
     @GetMapping("/loginPage")
     public String loginPage(HttpSession session) {
         return "loginPage.html";
-
     }
-
 }
