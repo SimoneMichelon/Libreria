@@ -1,4 +1,3 @@
 Tasks da completare per il progetto:
 1) Gestire il Login ed il Logout
-2) nbasbfdajksbnfjkasdnfkanfas
 2) Aggiungere un pulsante per sloggare
