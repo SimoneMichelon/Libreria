@@ -1,3 +1,4 @@
 Tasks da completare per il progetto:
 1) Gestire il Login ed il Logout
 2) Aggiungere un pulsante per sloggare
+3) Aggiungere la tabella cover per i libri

@@ -77,7 +77,11 @@ CREATE TABLE Orders_Books (
     PRIMARY KEY(id_book, id_order)
 );
 
-
+CREATE TABLE image (
+	id INT,
+    url VARCHAR(250),
+    primary key(id)
+);
 
 -- Insert sample data into the Authors table
 INSERT INTO Authors (name, surname, dob, biography) VALUES
@@ -182,13 +186,16 @@ VALUES
     ('Youth Services Librarian', 14),
     ('Archivist', 15);
     
+    
+    
 
 select * from models m inner join employees e on e.idModel = m.id;
 
 select * from Models m inner join Customers c ON m.id = c.idModel;
 select c.id from models m inner join customers c on m.id = c.idModel where m.id = 3;
 
-select * from Models m inner join on employees on m.id = e.idModel where m.id = 3;
+select * from Models m inner join employees e on m.id = e.idModel where m.id = 6;
+select * from Models m inner join customers c on m.id = c.idModel where m.id = 3;
 
 
 
