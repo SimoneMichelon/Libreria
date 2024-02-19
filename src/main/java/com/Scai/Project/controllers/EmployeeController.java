@@ -12,42 +12,40 @@ import com.Scai.Project.services.EmployeeService;
 
 import jakarta.servlet.http.HttpSession;
 
-
-@Controller
+// @Controller
 public class EmployeeController {
 
-    @Autowired
-    private EmployeeService employeeService;
+    // @Autowired
+    // private EmployeeService employeeService;
+
+    // // @GetMapping("/listEmployees")
+    // // public String getMethodName(Model model) {
+    // // List<Employee> employeeList = employeeService.findAll();
+    // // model.addAttribute("employees", employeeList);
+    // // return "listEmployees.html";
+    // // }
 
     // @GetMapping("/listEmployees")
-    // public String getMethodName(Model model) {
-    //     List<Employee> employeeList = employeeService.findAll();
-    //     model.addAttribute("employees", employeeList);
-    //     return "listEmployees.html";
+    // public String getMethodName(HttpSession session, Model model) {
+    // if((session.getAttribute("LOGIN")) != null)
+    // {
+    // if(session.getAttribute("LOGIN").toString().equals("OK"))
+    // {
+    // Employee employee = (Employee) session.getAttribute("ENTITY");
+    // List<Employee> employeeList = employeeService.findAll();
+    // model.addAttribute("employees", employeeList);
+    // model.addAttribute("customer", employee);
+    // return "listEmployees.html";
+
+    // }
+    // }
+    // else
+    // {
+    // model.addAttribute("alert", "Non sei autenticato");
+    // return "redirect:/loginPage";
     // }
 
-    @GetMapping("/listEmployees")
-    public String getMethodName(HttpSession session, Model model) {
-        if((session.getAttribute("LOGIN")) != null)
-        {   
-            if(session.getAttribute("LOGIN").toString().equals("OK"))
-            {
-                Employee employee = (Employee) session.getAttribute("ENTITY");
-                List<Employee> employeeList = employeeService.findAll();
-                model.addAttribute("employees", employeeList);
-                model.addAttribute("customer", employee);
-                return "listEmployees.html";
-                
-            }
-        }
-        else
-        {
-            model.addAttribute("alert", "Non sei autenticato");
-            return "redirect:/loginPage";
-        }
-
-        return "redirect:/loginPage";
-    }
-    
+    // return "redirect:/loginPage";
+    // }
 
 }

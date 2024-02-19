@@ -23,18 +23,13 @@ public class LoginController {
 
     @GetMapping("/loginPage")
     public String loginPage(HttpSession session) {
-        
-        if(session.getAttribute("LOGIN")!= null)
-        {
-            if(session.getAttribute("LOGIN").toString().equals("OK"))
-            {
+
+        if (session.getAttribute("LOGIN") != null) {
+            if (session.getAttribute("LOGIN").toString().equals("OK")) {
                 Model model = (Model) session.getAttribute("ENTITY");
-                if(model instanceof Customer)
-                {
+                if (model instanceof Customer) {
                     return "redirect:/listCustomers";
-                }
-                else if(model instanceof Employee)
-                {
+                } else if (model instanceof Employee) {
                     return "redirect:/listEmployees";
                 }
             }
@@ -42,30 +37,26 @@ public class LoginController {
         return "loginPage.html";
     }
 
-
     @PostMapping("/login")
-    public String login(@RequestParam Map<String, String> params, HttpSession session)
-    {
+    public String login(@RequestParam Map<String, String> params, HttpSession session) {
         Model model = loginService.findUser(params.get("username"), params.get("password"));
 
-        if(model instanceof Customer)
-        {
-            session.setAttribute("LOGIN","OK");
-            session.setAttribute("ROLE","CUSTOMER");
-            session.setAttribute("ENTITY",model);
+        if (model instanceof Customer) {
+            session.setAttribute("LOGIN", "OK");
+            session.setAttribute("ROLE", "CUSTOMER");
+            session.setAttribute("ENTITY", model);
             return "redirect:/listCustomers";
-        }
-        else if(model instanceof Employee){
-            session.setAttribute("LOGIN","OK");
-            session.setAttribute("ROLE","EMPLOYEE");
-            session.setAttribute("ENTITY",model);
+        } else if (model instanceof Employee) {
+            session.setAttribute("LOGIN", "OK");
+            session.setAttribute("ROLE", "EMPLOYEE");
+            session.setAttribute("ENTITY", model);
             return "redirect:/listEmployees";
         }
 
-        else
-        {
-            //LOGIN ERRATO
+        else {
+            // LOGIN ERRATO
             return "redirect:/culo.html";
         }
     }
+
 }

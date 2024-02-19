@@ -13,30 +13,30 @@ import com.Scai.Project.services.CustomerService;
 import jakarta.servlet.http.HttpSession;
 
 
-@Controller
+// @Controller
 public class CustomerController {
 
-    @Autowired
-    private CustomerService customerService;
+    // @Autowired
+    // private CustomerService customerService;
 
-    @GetMapping("/listCustomers")
-    public String getMethodName(HttpSession session,Model model) {
-        if(session.getAttribute("LOGIN")!=null)
-        {
-            if(session.getAttribute("LOGIN").toString().equals("OK"))
-            {
-                Customer customer = (Customer) session.getAttribute("ENTITY");
-                List<Customer> customerList = customerService.findAll();
-                model.addAttribute("customers", customerList);
-                model.addAttribute("customer", customer);
-                return "listCustomers.html";
-            }
-        }
-        else
-        {
-            model.addAttribute("alert","Simone cedadawdjewiuhwifh ewiucha");
-            return "redirect:/loginPage";
-        }
-        return "redirect:/loginPage";
-    }
+    // @GetMapping("/listCustomers")
+    // public String getMethodName(HttpSession session,Model model) {
+    //     if(session.getAttribute("LOGIN")!=null)
+    //     {
+    //         if(session.getAttribute("LOGIN").toString().equals("OK"))
+    //         {
+    //             Customer customer = (Customer) session.getAttribute("ENTITY");
+    //             List<Customer> customerList = customerService.findAll();
+    //             model.addAttribute("customers", customerList);
+    //             model.addAttribute("customer", customer);
+    //             return "listCustomers.html";
+    //         }
+    //     }
+    //     else
+    //     {
+    //         model.addAttribute("alert","Simone cedadawdjewiuhwifh ewiucha");
+    //         return "redirect:/loginPage";
+    //     }
+    //     return "redirect:/loginPage";
+    // }
 }
