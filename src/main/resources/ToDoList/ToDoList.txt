@@ -1,0 +1,3 @@
+Tasks da completare per il progetto:
+1) Gestire il Login ed il Logout
+2)
