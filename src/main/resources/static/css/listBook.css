@@ -1,59 +1,63 @@
 /* Reset CSS */
-body, h1, a, table {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    color: #fff;
+body,
+h1,
+a,
+table {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
 }
 
 body {
-    background-color: #1a1a1a; /* Colore di sfondo scuro */
-    padding: 20px;
+  background-color: #1a1a1a; /* Colore di sfondo scuro */
+  padding: 20px;
 }
 
 h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #e63946; /* Colore del titolo in rosso (meno acceso) */
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #e63946; /* Colore del titolo in rosso (meno acceso) */
 }
 
 a {
-    display: inline-block;
-    color: #088416; /* Colore del link in rosso (meno acceso) */
-    text-decoration: none;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    background-color: #222; /* Colore di sfondo dei link */
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  color: #e8e9e9; /* Colore del link in rosso (meno acceso) */
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #222; /* Colore di sfondo dei link */
+  transition: background-color 0.3s ease;
 }
 
 a:hover {
-    background-color: #333; /* Cambio colore al passaggio del mouse */
+  background-color: #333; /* Cambio colore al passaggio del mouse */
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-th, td {
-    border: 1px solid #333; /* Colore del bordo della tabella */
-    padding: 8px;
-    text-align: left;
+th,
+td {
+  border: 1px solid #333; /* Colore del bordo della tabella */
+  padding: 8px;
+  text-align: center;
 }
 
 tr:nth-child(even) {
-    background-color: #292929; /* Colore di sfondo delle righe pari */
+  background-color: #292929; /* Colore di sfondo delle righe pari */
 }
 
 th {
-    background-color: #1ba83c; /* Colore di sfondo dell'intestazione */
-    color: #fff; /* Colore del testo dell'intestazione */
+  background-color: #830404; /* Colore di sfondo dell'intestazione */
+  color: #fff; /* Colore del testo dell'intestazione */
 }
 
-img{
-    width: 50px;
-    height: 100px;
-    border: 1px solid white;
+img {
+  width: 70%;
+  height: 70%;
+  border: 1px solid white;
 }
