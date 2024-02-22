@@ -14,23 +14,30 @@
         <a href="/home">HOME</a> 
 
         <table>
-            <tr>
-                <th>Title</th>
-                <th>Type</th>
-                <th>Number of Pages</th>
-                <th>Price</th>
-                <th>Author</th>
-            </tr>
-
-            <tr th:each="book : ${books}"> 
-                <td th:text="${book.title}"></td>
-                <td th:text="${book.type}"></td>
-                <td th:text="${book.num_pages}"></td>
-                <td th:text="${book.price}"></td>  
-                <td th:text="${book.author.getName() + ' ' + book.author.getSurname()}"></td>
-            </tr>
-
+            <thead>
+                <tr>
+                    <th>Cover</th>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Number of Pages</th>
+                    <th>Price</th>
+                    <th>Author</th>
+                    <th>Id of Book</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="book, bookIndex : ${books}">
+                    <td>
+                        <img th:src="${covers[bookIndex.index].url}" alt="Immagine">
+                    </td>
+                    <td th:text="${book.title}"></td>
+                    <td th:text="${book.type}"></td>
+                    <td th:text="${book.num_pages}"></td>
+                    <td th:text="${book.price}"></td>
+                    <td th:text="${book.author.getName()} + ' ' + ${book.author.getSurname()}"></td>
+                    <td th:text="${covers[bookIndex.index].idBook}"></td>
+                </tr>
+            </tbody>
         </table>
-        
     </body>
 </html>

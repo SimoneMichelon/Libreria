@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.Scai.Project.services.AuthorService;
 import com.Scai.Project.services.BookService;
+import com.Scai.Project.services.CoverService;
 import com.Scai.Project.services.CustomerService;
 import com.Scai.Project.services.EmployeeService;
 import com.Scai.Project.services.LoginService;
@@ -32,8 +33,15 @@ public class ServiceContext {
         return new CustomerService();
     }
 
+    @Bean 
+    public CoverService newCoverService(){
+        return new CoverService();
+    }
+
     @Bean
     public LoginService newLoginService(){
         return new LoginService();
     }
+
+    
 }

@@ -77,7 +77,13 @@ CREATE TABLE Orders_Books (
     PRIMARY KEY(id_book, id_order)
 );
 
-
+CREATE TABLE covers (
+	id INT AUTO_INCREMENT,
+    url VARCHAR(250),
+    idBook INT,
+    PRIMARY KEY(id),
+    FOREIGN KEY(idBook) REFERENCES Books(id)
+);
 
 -- Insert sample data into the Authors table
 INSERT INTO Authors (name, surname, dob, biography) VALUES
@@ -89,7 +95,7 @@ INSERT INTO Authors (name, surname, dob, biography) VALUES
 ('Sarah', 'Taylor', '1982-09-05', 'Sarah Taylor is a fantasy author known for her intricate world-building.'),
 ('Christopher', 'Lee', '1970-04-18', 'Christopher Lee is a novelist exploring themes of existentialism and identity.'),
 ('Amanda', 'Clark', '1995-01-25', 'Amanda Clark is a debut novelist making waves in the literary world.'),
-('Robert', 'Martinez', '1983-06-14', 'Robert Martinez writes gripping thrillers that keep readers on the edge of their seats.'),
+('Robert', 'Martinez', '1983-06-14', 'Robert Martinez writes gripping thrillers that keep readers on the edge of their s	eats.'),
 ('Laura', 'Garcia', '1978-11-03', 'Laura Garcia is a celebrated author of romance novels with a flair for drama.'),
 ('Daniel', 'Jones', '1986-02-28', 'Daniel Jones is an up-and-coming author of historical fiction.'),
 ('Jennifer', 'White', '1992-07-17', 'Jennifer White writes heartwarming stories that resonate with readers of all ages.'),
@@ -182,13 +188,50 @@ VALUES
     ('Youth Services Librarian', 14),
     ('Archivist', 15);
     
+INSERT INTO covers (url, idBook) 
+VALUES 
+('https://m.media-amazon.com/images/I/41XMaCHkrgL.jpg', 1), 
+('https://www.sequelbooks.com/assets/full/9780099419785.jpg?20210318035335', 2), 
+('https://images.booksense.com/images/333/869/9781328869333.jpg', 3), 
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 4), 
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 5), 
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 6), 
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 7), 
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 8), 
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 9),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 10),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 11),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 12),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 13),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 14),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 15),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 16),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 17),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 18),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 19),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 20),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 21),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 22),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 23),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 24), 
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 25);
+
+
+
+select * from books;
 
 select * from models m inner join employees e on e.idModel = m.id;
 
 select * from Models m inner join Customers c ON m.id = c.idModel;
 select c.id from models m inner join customers c on m.id = c.idModel where m.id = 3;
 
-select * from Models m inner join on employees on m.id = e.idModel where m.id = 3;
+select * from Models m inner join employees e on m.id = e.idModel where m.id = 6;
+select * from Models m inner join customers c on m.id = c.idModel where m.id = 3;
+
+
+
+
+
 
 
 
