@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.Scai.Project.dao.AuthorDAO;
 import com.Scai.Project.dao.BookDAO;
+import com.Scai.Project.dao.CoverDAO;
 import com.Scai.Project.dao.CustomerDAO;
 import com.Scai.Project.dao.Database;
 import com.Scai.Project.dao.EmployeeDAO;
@@ -39,7 +40,13 @@ public class DatabaseContext {
     }
 
     @Bean
+    public CoverDAO newCoverDAO(){
+        return new CoverDAO();
+    }
+
+    @Bean
     public UserDAO newUserDAO(){
         return new UserDAO();
     }
+
 }

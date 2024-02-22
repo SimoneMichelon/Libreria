@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Scope;
 
 import com.Scai.Project.entities.Author;
 import com.Scai.Project.entities.Book;
+import com.Scai.Project.entities.Cover;
 import com.Scai.Project.entities.Customer;
 import com.Scai.Project.entities.Employee;
 
@@ -67,6 +68,16 @@ public class EntitiesContext {
             Date.valueOf(params.get("dob")),
             params.get("username"),
             params.get("password")
+        );
+    }
+
+    @Bean
+    @Scope("prototype")
+    public Cover newCover(Map<String,String> params){
+        return new Cover(
+            Integer.parseInt(params.get("id")),
+            params.get("url"),
+            Integer.parseInt(params.get("idBook"))
         );
     }
 
