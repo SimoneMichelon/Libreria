@@ -30,7 +30,7 @@ public class CoverDAO implements IDAO{
             Cover cover = (Cover)e;
             ps = database.getConnection().prepareStatement(query);
 
-            ps.setString(1, cover.getCover());
+            ps.setString(1, cover.getUrl());
             ps.setInt(2, cover.getIdBook());
             
             ps.executeUpdate();
@@ -92,7 +92,7 @@ public class CoverDAO implements IDAO{
 
                 params.put("id", rs.getInt("id")+"");
                 params.put("url", rs.getString("url"));
-                params.put("idBook", rs.getInt(query)+"");
+                params.put("idBook", rs.getInt("idBook")+"");
 
                 Cover cover = context.getBean(Cover.class, params);
 
@@ -122,7 +122,7 @@ public class CoverDAO implements IDAO{
             ps = database.getConnection().prepareStatement(query);
             Cover cover = (Cover)e;
 
-            ps.setString(1, cover.getCover());
+            ps.setString(1, cover.getUrl());
             ps.setInt(2, cover.getIdBook());
             ps.setInt(3, cover.getId());
             

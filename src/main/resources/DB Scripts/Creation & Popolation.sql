@@ -78,7 +78,7 @@ CREATE TABLE Orders_Books (
 );
 
 CREATE TABLE covers (
-	id INT,
+	id INT AUTO_INCREMENT,
     url VARCHAR(250),
     idBook INT,
     PRIMARY KEY(id),
@@ -188,8 +188,37 @@ VALUES
     ('Youth Services Librarian', 14),
     ('Archivist', 15);
     
-    
-    
+INSERT INTO covers (url, idBook) 
+VALUES 
+('https://m.media-amazon.com/images/I/41XMaCHkrgL.jpg', 1), 
+('https://www.sequelbooks.com/assets/full/9780099419785.jpg?20210318035335', 2), 
+('https://images.booksense.com/images/333/869/9781328869333.jpg', 3), 
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 4), 
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 5), 
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 6), 
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 7), 
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 8), 
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 9),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 10),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 11),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 12),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 13),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 14),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 15),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 16),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 17),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 18),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 19),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 20),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 21),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 22),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 23),
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 24), 
+('https://www.ibs.it/images/9788804523413_0_200_0_75.jpg', 25);
+
+
+
+select * from books;
 
 select * from models m inner join employees e on e.idModel = m.id;
 
@@ -199,7 +228,9 @@ select c.id from models m inner join customers c on m.id = c.idModel where m.id 
 select * from Models m inner join employees e on m.id = e.idModel where m.id = 6;
 select * from Models m inner join customers c on m.id = c.idModel where m.id = 3;
 
-select * from authors where name like "Jennifer"; 
+
+
+
 
 
 
