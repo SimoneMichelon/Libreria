@@ -1,46 +1,28 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/listBook.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-    />
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="./css/listBook.css">
     <title>List of Books</title>
-  </head>
-  <body>
+</head>
+<body>
+  <div>
     <h1>List of Books</h1>
-
     <a href="/home">HOME</a>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Cover</th>
-          <th>Title</th>
-          <th>Type</th>
-          <th>Number of Pages</th>
-          <th>Price</th>
-          <th>Author</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr th:each="book, bookIndex : ${books}">
-          <td>
-            <img th:src="${covers[bookIndex.index].url}" alt="Immagine" />
-          </td>
-          <td th:text="${book.title}"></td>
-          <td th:text="${book.type}"></td>
-          <td th:text="${book.num_pages}"></td>
-          <td th:text="${book.price} + €"></td>
-          <td
-            th:text="${book.author.getName()} + ' ' + ${book.author.getSurname()}"
-          ></td>
-        </tr>
-      </tbody>
-    </table>
-  </body>
+    <div class="card-container">
+        <!-- Card for each book -->
+        <div class="card" th:each="book, bookIndex : ${books}">
+            <img th:src="${covers[bookIndex.index].url}" alt="Book Cover"/>
+            <h2 th:text="${book.title}"></h2>
+            <p>Type: <span th:text="${book.type}"></span></p>
+            <p>Number of Pages: <span th:text="${book.num_pages}"></span></p>
+            <p>Price: <span th:text="${book.price}"></span> €</p>
+            <p>Author: <span th:text="${book.author.getName()} + ' ' + ${book.author.getSurname()}"></span></p>
+        </div>
+    </div>
+    </div>
+</body>
 </html>

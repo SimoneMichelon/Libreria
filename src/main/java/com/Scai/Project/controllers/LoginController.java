@@ -39,6 +39,10 @@ public class LoginController {
 
     @PostMapping("/login")
     public String login(@RequestParam Map<String, String> params, HttpSession session) {
+        if (session.getAttribute("LOGIN") != null && session.getAttribute("LOGIN").equals("OK")) {
+            // Utente già autenticato
+            return "redirect:/loginPage";
+        }
         Model model = loginService.findUser(params.get("username"), params.get("password"));
 
         if (model instanceof Customer) {
